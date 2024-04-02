@@ -6,7 +6,7 @@ export default function Texto({children, style}){
     let estilo = styles.texto;
 
     //Verifica se deve exibir a fonte em negrito
-    if(style.fontWeight =="bold"){
+    if(style?.fontWeight =="bold"){
         //Negrito, muda a estilização
         estilo = styles.textoNegrito;
     }

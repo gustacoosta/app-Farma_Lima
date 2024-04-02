@@ -1,15 +1,11 @@
 import React from 'react';
-import { StyleSheet, Image, Dimensions, View } from 'react-native';
+import { StyleSheet, Image, View, TouchableOpacity, Alert } from 'react-native';
 
 import Texto from "../../../componentes/Texto" //componente de exibição de texto
 
-//Captura o tamanho da tela que esta rodando o app
-const width = Dimensions.get('screen').width;
-
-
 //import uma fonte diferente do Google Fonts
 //npm expo install expo-font @expo-google-fonts/nome-da-fonte
-export default function Detalhes({logo, nome, detalhe, preco}) {
+export default function Detalhes({ logo, nome, detalhe, preco }) {
     return <View style={styles.produto}>
         <View style={styles.logotipo}>
             <Image source={logo} style={styles.logo} resizeMode='contain'></Image>
@@ -17,6 +13,9 @@ export default function Detalhes({logo, nome, detalhe, preco}) {
         </View>
         <Texto style={styles.descricao}> {detalhe} </Texto>
         <Texto style={styles.preco}>{preco}</Texto>
+        <TouchableOpacity style={styles.botao} onPress={() => {Alert.alert("Carrinho de compras", "Este produto será adicionado ao seu carrinho de compras.")}}>
+            <Texto style={styles.botaoTexto}>Comprar</Texto>
+        </TouchableOpacity>
     </View>
 }
 
@@ -24,6 +23,7 @@ const styles = StyleSheet.create({
     produto: {
         paddingVertical: 8,
         paddingHorizontal: 16,
+        alignItems: "center"
     },
     nome: {
         fontWeight: "bold",
@@ -52,4 +52,17 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         paddingVertical: 5,
     },
+    botao: {
+        width: "80%",
+        marginTop: 16,
+        backgroundColor: "#add8e6",
+        paddingVertical: 16,
+        borderRadius: 6,
+    },
+    botaoTexto: {
+        textAlign: "center",
+        fontSize: 22,
+        lineHeight: 26,
+        fontWeight: "bold"
+    }
 });
