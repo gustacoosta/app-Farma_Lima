@@ -10,11 +10,11 @@ const width = Dimensions.get('screen').width;
 
 //import uma fonte diferente do Google Fonts
 //npm expo install expo-font @expo-google-fonts/nome-da-fonte
-export default function Topo() {
+export default function Topo({titulo}) {
     return <>
         <StatusBar />
         <Image source={Header} style={styles.topo}></Image>
-        <Texto style={styles.titulo}>Detalhes do produto</Texto>
+        <Texto style={styles.titulo}>{titulo}</Texto>
     </>
 }
 
