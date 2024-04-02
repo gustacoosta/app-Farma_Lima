@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Image, View, TouchableOpacity, Alert } from 'react-native';
 
 import Texto from "../../../componentes/Texto" //componente de exibição de texto
+import Botao from "../../../componentes/Botao" 
 
 //import uma fonte diferente do Google Fonts
 //npm expo install expo-font @expo-google-fonts/nome-da-fonte
@@ -13,9 +14,7 @@ export default function Detalhes({ logo, nome, detalhe, preco }) {
         </View>
         <Texto style={styles.descricao}> {detalhe} </Texto>
         <Texto style={styles.preco}>{preco}</Texto>
-        <TouchableOpacity style={styles.botao} onPress={() => {Alert.alert("Carrinho de compras", "Este produto será adicionado ao seu carrinho de compras.")}}>
-            <Texto style={styles.botaoTexto}>Comprar</Texto>
-        </TouchableOpacity>
+        <Botao></Botao>
     </View>
 }
 
@@ -55,7 +54,7 @@ const styles = StyleSheet.create({
     botao: {
         width: "80%",
         marginTop: 16,
-        backgroundColor: "#add8e6",
+        backgroundColor: "#bee0ec",
         paddingVertical: 16,
         borderRadius: 6,
     },
