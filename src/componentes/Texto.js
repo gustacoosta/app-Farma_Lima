@@ -16,9 +16,10 @@ export default function Texto({children, style}){
 
 const styles = StyleSheet.create({
     texto: {
-        fontFamily: "PoppinsRegular",
+        fontFamily: "Poppins_400Regular",
     },
     textoNegrito:{
-        fontFamily: "PoppinsBold",
+        fontFamily: "Poppins_600SemiBold",
+        fontWeight: "normal"
     }
 })
