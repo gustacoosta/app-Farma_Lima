@@ -22,7 +22,8 @@ const styles = StyleSheet.create({
     produto: {
         paddingVertical: 8,
         paddingHorizontal: 16,
-        alignItems: "center"
+        alignItems: "center",
+        backgroundColor: "white"
     },
     nome: {
         fontWeight: "bold",

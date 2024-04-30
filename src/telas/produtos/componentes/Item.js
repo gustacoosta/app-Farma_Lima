@@ -17,6 +17,7 @@ const styles = StyleSheet.create({
         borderBottomColor: "#c4bebe",
         paddingVertical: 16,
         alignItems: "center",
+        backgroundColor: "white",
     },
     nome: {
         fontSize: 18,

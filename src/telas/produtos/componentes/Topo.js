@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
         width: "100%",
         height: 1000 / 1000 * width,
         marginTop: 45,
+        backgroundColor: "white",
     },
     titulo: {
         fontWeight: "bold",
