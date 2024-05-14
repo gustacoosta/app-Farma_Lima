@@ -8,11 +8,20 @@ import Ionicons from 'react-native-vector-icons/Ionicons'
 
 import Produto from "./src/telas/produtos";
 import SobreNos from "./src/telas/sobre_nos";
+import Catalogo from "./src/telas/catalogo";
+
 import Mocks from "./src/mocks/produto";
+import MocksCard from "./src/mocks/catalogo";
 
 function MenuKit() {
   return <View>
     <Produto {...Mocks} />
+  </View>
+}
+
+function PagProduto(){
+  return <View>
+    <Catalogo {...MocksCard} />
   </View>
 }
 
@@ -49,7 +58,7 @@ function TabsMenu() {
         tabBarInactiveTintColor: 'gray',
         tabBarHideOnKeyboard: true,
       })}>
-    <Tab.Screen name='Produtos' component={MenuKit} />
+    <Tab.Screen name='Produtos' component={PagProduto} />
     <Tab.Screen name='Kit' component={MenuKit} />
     <Tab.Screen name='Lista de Desejos' component={MenuKit} />
     <Tab.Screen name='Sobre nós' component={SobreNos} />
