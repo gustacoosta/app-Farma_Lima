@@ -7,7 +7,7 @@ import Card from "./componentes/CardProd";
 
 export default function Catalogo({ card }) {
     return <View style={styles.tela}>
-        <Texto style={styles.titulo}>{card.titulo2}</Texto>
+        <Texto style={styles.titulo}>{card.titulo}</Texto>
         <FlatList
             style={styles.lista}
             data={card.produtos}
@@ -16,6 +16,5 @@ export default function Catalogo({ card }) {
             numColumns={2}
         />
     </View>
-
 }
 
