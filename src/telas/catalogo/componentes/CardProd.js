@@ -1,33 +1,32 @@
 import React, { useState } from 'react';
-import { TouchableOpacity, Text } from 'react-native';
+import { TouchableOpacity, Text, Modal, Pressable, View, Image } from 'react-native';
 import { Card } from 'react-native-paper';
 import styles from "../styles/style";
-import Modal from "./Modal";
 
-export default function CardProd({ item: { titulo, descricao, imagem } }) {
+import Texto from "../../../componentes/Texto"
+
+export default function CardProd({ item: { titulo, descricao, imagem, preco} }) {
     const [modalVisible, setModalVisible] = useState(false);
-
-    return (
-        <>
-            <TouchableOpacity
-                style={styles.card}
-                onPress={() => setModalVisible(true)}
-            >
-                <Card>
-                    <Card.Content style={styles.container}>
-                        <Text variant="titleLarge" style={styles.tituloCard}>{titulo}</Text>
-                        <Text variant="bodyMedium" style={styles.descricao}>{descricao}</Text>
-                    </Card.Content>
-                    <Card.Cover style={styles.imgProd} source={imagem} />
-                </Card>
-            </TouchableOpacity>
-            <Modal
-                modalVisible={modalVisible}
-                setModalVisible={setModalVisible}
-                titulo={titulo}
-                descricao={descricao}
-                imagem={imagem}
-            />
-        </>
-    );
+    return <View style={styles.card}>
+        <TouchableOpacity onPress={() => setModalVisible(true)}>
+            <Card>
+                <Card.Content style={styles.container}>
+                    <Texto variant="titleLarge" style={styles.tituloCard}>{titulo}</Texto>
+                    <Texto variant="bodyMedium" style={styles.descricao}>{descricao}</Texto>
+                </Card.Content>
+                <Card.Cover style={styles.imgProd} source={imagem} />
+            </Card>
+        </TouchableOpacity>
+        <Modal visible={modalVisible} transparent={true}>
+            <View style={styles.modalView}>
+                <Texto style={styles.tituloCard}>{titulo}</Texto>
+                <Image style={styles.imgModal} source={imagem}></Image>
+                <Texto style={styles.descricao}>{descricao}</Texto>
+                <Texto style={styles.preco}>{preco}</Texto>
+                <Pressable style={styles.button} onPress={() => setModalVisible(false)}>
+                    <Texto>Fechar</Texto>
+                </Pressable>
+            </View>
+        </Modal>
+    </View>
 }

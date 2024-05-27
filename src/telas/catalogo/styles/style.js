@@ -14,6 +14,14 @@ export default StyleSheet.create({
         color: "black",
         padding: 16,
     },
+    preco: {
+        fontWeight: "bold",
+        width: "100%",
+        textAlign: "center",
+        fontSize: 20,
+        color: "black",
+        padding: 12,
+    },
     lista: {
         marginTop: 60,
     },
@@ -42,7 +50,13 @@ export default StyleSheet.create({
     imgProd: {
         borderRadius: 20,
         height: 200,
-    }, centeredView: {
+    },
+    imgModal: {
+        borderRadius: 20,
+        height: 200,
+        width: 200,
+    }, 
+    centeredView: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
@@ -50,26 +64,27 @@ export default StyleSheet.create({
     },
     modalView: {
         margin: 20,
+        marginTop: 150,
         backgroundColor: 'white',
         borderRadius: 20,
         padding: 35,
         alignItems: 'center',
         shadowColor: '#000',
         shadowOffset: {
-            width: 0,
+            width: 2,
             height: 2,
         },
-        shadowOpacity: 0.25,
+        shadowOpacity: 1,
         shadowRadius: 4,
-        elevation: 5,
+        elevation: 25,
     },
     button: {
         borderRadius: 20,
-        padding: 10,
+        padding: 15,
+        fontSize: 20,
+        fontWeight: 'bold',
         elevation: 2,
-    },
-    buttonClose: {
-        backgroundColor: '#2196F3',
+        backgroundColor: '#ADFF2F',
     },
     textStyle: {
         color: 'white',
